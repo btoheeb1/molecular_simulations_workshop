@@ -1,0 +1,11 @@
+tolerance 2.0
+filetype xyz
+output waters.xyz
+nloop0 1000 
+
+
+structure water.xyz
+  number 267
+  inside box 0. 0. 0. 20. 20. 20.
+end structure
+

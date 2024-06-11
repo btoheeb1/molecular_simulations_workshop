@@ -1,0 +1,14 @@
+import "oplsaa.lt"
+water inherits OPLSAA {
+  write('Data Atoms') {
+    $atom:O1   $mol @atom:76  -0.8476   0.00   0.00  0.00
+    $atom:H2   $mol @atom:77   0.4238   0.00   0.00  0.00
+    $atom:H3   $mol @atom:77   0.4238   0.00   0.00  0.00
+}
+
+write('Data Bond List') {
+      $bond:1    $atom:O1  $atom:H2
+      $bond:2    $atom:O1  $atom:H3
+      }
+
+}
