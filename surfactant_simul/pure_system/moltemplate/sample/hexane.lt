@@ -1,0 +1,48 @@
+import "oplsaa.lt"
+hexane inherits OPLSAA {
+  write('Data Atoms') {
+    $atom:C1   $mol @atom:82  -0.18   0.00   0.00  0.00
+    $atom:H11  $mol @atom:85   0.06   0.00   0.00  0.00
+    $atom:H12  $mol @atom:85   0.06   0.00   0.00  0.00
+    $atom:H13  $mol @atom:85   0.06   0.00   0.00  0.00
+    $atom:C2   $mol @atom:82  -0.12   0.00   0.00  0.00
+    $atom:H21  $mol @atom:85   0.06   0.00   0.00  0.00
+    $atom:H22  $mol @atom:85   0.06   0.00   0.00  0.00
+    $atom:C3   $mol @atom:82  -0.12   0.00   0.00  0.00
+    $atom:H31  $mol @atom:85   0.06   0.00   0.00  0.00
+    $atom:H32  $mol @atom:85   0.06   0.00   0.00  0.00
+    $atom:C4   $mol @atom:82  -0.12   0.00   0.00  0.00
+    $atom:H41  $mol @atom:85   0.06   0.00   0.00  0.00
+    $atom:H42  $mol @atom:85   0.06   0.00   0.00  0.00
+    $atom:C5   $mol @atom:82  -0.12   0.00   0.00  0.00
+    $atom:H51  $mol @atom:85   0.06   0.00   0.00  0.00
+    $atom:H52  $mol @atom:85   0.06   0.00   0.00  0.00
+    $atom:C6   $mol @atom:82  -0.18   0.00   0.00  0.00
+    $atom:H61  $mol @atom:85   0.06   0.00   0.00  0.00
+    $atom:H62  $mol @atom:85   0.06   0.00   0.00  0.00
+    $atom:H63  $mol @atom:85   0.06   0.00   0.00  0.00
+  }
+
+  write('Data Bond List') {
+    $bond:1    $atom:C1  $atom:C2
+    $bond:2    $atom:C1  $atom:H11
+    $bond:3    $atom:C1  $atom:H12
+    $bond:4    $atom:C1  $atom:H13
+    $bond:5    $atom:C2  $atom:C3
+    $bond:6    $atom:C2  $atom:H21
+    $bond:7    $atom:C2  $atom:H22
+    $bond:8    $atom:C3  $atom:C4
+    $bond:9    $atom:C3  $atom:H31
+    $bond:10   $atom:C3  $atom:H32
+    $bond:11   $atom:C4  $atom:C5
+    $bond:12   $atom:C4  $atom:H41
+    $bond:13   $atom:C4  $atom:H42
+    $bond:14   $atom:C5  $atom:C6
+    $bond:15   $atom:C5  $atom:H51
+    $bond:16   $atom:C5  $atom:H52
+    $bond:17   $atom:C6  $atom:H61
+    $bond:18   $atom:C6  $atom:H62
+    $bond:19   $atom:C6  $atom:H63
+  }
+}
+

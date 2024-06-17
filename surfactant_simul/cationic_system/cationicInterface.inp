@@ -1,0 +1,44 @@
+#
+# Interface between Oil and Water
+#
+
+tolerance 2.0 
+nloop0 10000
+filetype xyz
+output cationicInterface.xyz
+
+structure water.xyz
+  number 900
+  inside box 0. 0. 0. 30. 30. 30.
+end structure
+
+structure CL.xyz
+  number 8
+  inside box 0. 0. 0. 30. 30. 30.
+end structure
+
+structure cationic.xyz
+  number 16
+  inside box 0. 0. 25. 30. 30. 60.
+  atoms  20
+    below plane 0. 0. 1. 30.
+  end atoms
+  atoms 1
+    over plane 0. 0. 1. 35.
+  end atoms
+end structure
+
+structure hexane.xyz
+  number 123
+  inside box 0. 0. 30. 30. 30. 60.
+end structure
+
+structure water.xyz
+  number 900
+  inside box 0. 0. 60. 30. 30. 90.
+end structure
+
+structure CL.xyz
+  number 8
+  inside box 0. 0. 60. 30. 30. 90.
+end structure

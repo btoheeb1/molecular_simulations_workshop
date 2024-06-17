@@ -1,0 +1,22 @@
+#
+# Interface between Oil and Water
+#
+
+tolerance 2.0 
+filetype xyz
+output hexane_water.xyz
+
+structure water.xyz
+  number 900
+  inside box 0. 0. 0. 30. 30. 30.
+end structure
+
+structure hexane.xyz
+  number 124 
+  inside box 0. 0. 30. 30. 30. 60.
+end structure
+
+structure water.xyz
+  number 900
+  inside box 0. 0. 60. 30. 30. 90.
+end structure

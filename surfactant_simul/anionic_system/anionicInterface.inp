@@ -1,0 +1,43 @@
+#
+# Interface between Oil and Water
+#
+
+tolerance 2.0 
+filetype pdb
+output anionicInterface.pdb
+
+structure ../pdbs/water.pdb 
+  number 900
+  inside box 0. 0. 0. 30. 30. 30.
+end structure
+
+structure ../pdbs/NA.pdb
+  number 8
+  inside box 0. 0. 0. 30. 30. 30.
+end structure
+
+structure ../pdbs/hexane.pdb
+  number 123
+  inside box 0. 0. 30. 30. 30. 60.
+end structure
+
+structure ../pdbs/anionic.pdb
+  number 16
+  inside box 0. 0. 30. 30. 30. 60.
+  atoms  21
+    below plane 0. 0. 1. 30.
+  end atoms
+  atoms 1
+    over plane 0. 0. 1. 37.
+  end atoms
+end structure
+
+structure ../pdbs/water.pdb
+  number 900
+  inside box 0. 0. 60. 30. 30. 90.
+end structure
+
+structure ../pdbs/NA.pdb
+  number 8
+  inside box 0. 0. 60. 30. 30. 90.
+end structure

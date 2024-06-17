@@ -1,0 +1,55 @@
+# LAMMPS Input Script for Water and Hexane Simulation
+
+# Initialization
+units           real
+dimension       3
+boundary        p p p
+atom_style      full
+
+# Atom Definition
+read_data       water.data  # Data file for water
+#read_data       hexane.data add append offset 2 2 2 0 0 0  # Data file for hexane, with appropriate offsets
+
+# Force Fields
+pair_style      lj/cut/coul/long 10.0 12.0
+pair_modify     mix arithmetic
+bond_style      harmonic
+angle_style     harmonic
+dihedral_style  opls
+
+# Force Field Coefficients for Water (OPLS-AA)
+pair_coeff      1 1 0.1521 3.1507   # O-O interaction (epsilon, sigma)
+pair_coeff      2 2 0.0460 2.4500   # H-H interaction (epsilon, sigma)
+pair_coeff      1 2 0.0460 2.8000   # O-H interaction (epsilon, sigma)
+bond_coeff      1 450 0.9572        # O-H bond (k, r0)
+angle_coeff     1 55 104.52         # H-O-H angle (k, theta0)
+
+# Force Field Coefficients for Hexane (OPLS-AA)
+pair_coeff      3 3 0.0660 3.5000   # C-C interaction (epsilon, sigma)
+pair_coeff      4 4 0.0300 2.5000   # H-H interaction (epsilon, sigma)
+pair_coeff      3 4 0.0360 3.0000   # C-H interaction (epsilon, sigma)
+bond_coeff      2 340 1.09          # C-H bond (k, r0)
+bond_coeff      3 268 1.53          # C-C bond (k, r0)
+angle_coeff     2 33 109.5          # H-C-H angle (k, theta0)
+angle_coeff     3 35 112.0          # C-C-C angle (k, theta0)
+dihedral_coeff  1 0.0 1.3 0.0 0.0   # Dihedral (C-C-C-C, OPLS-AA style)
+
+# Neighbor Settings
+neighbor        2.0 bin
+neigh_modify    delay 10 every 1
+
+# Initial Velocities
+velocity        all create 300.0 4928459 rot yes dist gaussian
+
+# Fixes
+fix             1 all npt temp 300.0 300.0 100.0 iso 1.0 1.0 1000.0
+
+# Output Settings
+thermo          100
+thermo_style    custom step temp pe etotal press
+dump            1 all atom 1000 dump.water_hexane.lammpstrj
+
+# Run
+timestep        1.0
+run             10000
+
